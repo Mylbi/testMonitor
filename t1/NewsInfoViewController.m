@@ -40,6 +40,23 @@
 - (void)parseEndWithDictonary:(NSMutableDictionary *)dict
 {
     wordCountDict = dict;
+    
+    
+    tableDataArray = [wordCountDict keysSortedByValueUsingComparator: ^(id obj1, id obj2)
+    {
+
+        if ([obj1 integerValue] < [obj2 integerValue]) {
+            
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        if ([obj1 integerValue] > [obj2 integerValue]) {
+            
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        
+        return (NSComparisonResult)NSOrderedSame;
+    }];
+    
     [self.tableView reloadData];
 }
 
@@ -47,7 +64,7 @@
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [wordCountDict count];
+    return [tableDataArray count];
     
 }
 
@@ -67,9 +84,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     
     
-    NSString *key = [[wordCountDict allKeys]objectAtIndex:indexPath.row];
+    //NSString *key = [[wordCountDict allKeys]objectAtIndex:indexPath.row];
+    NSString *key = [tableDataArray objectAtIndex:indexPath.row];
+
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ :%i",
+    cell.textLabel.text = [NSString stringWithFormat:@"\"%@\" : %i",
                            key,
                            [[wordCountDict objectForKey:key] integerValue]];
     

@@ -12,6 +12,7 @@
 @interface NewsInfoViewController : UIViewController <NewsParserDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableDictionary *wordCountDict;
+    NSArray *tableDataArray;
     NSString *urlString;
 }
 
