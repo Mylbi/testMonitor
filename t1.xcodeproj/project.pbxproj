@@ -21,6 +21,8 @@
 		1F83FA73195EF77900FD485A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F83FA55195EF77900FD485A /* UIKit.framework */; };
 		1F83FA7B195EF77900FD485A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F83FA79195EF77900FD485A /* InfoPlist.strings */; };
 		1F83FA7D195EF77900FD485A /* t1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FA7C195EF77900FD485A /* t1Tests.m */; };
+		84C45BFE198BD3550079DCF2 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C45BFD198BD3550079DCF2 /* Parser.m */; };
+		84C45C01198BD9260079DCF2 /* NewsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C45C00198BD9260079DCF2 /* NewsInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		1F83FA78195EF77900FD485A /* t1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "t1Tests-Info.plist"; sourceTree = "<group>"; };
 		1F83FA7A195EF77900FD485A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1F83FA7C195EF77900FD485A /* t1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = t1Tests.m; sourceTree = "<group>"; };
+		84C45BFC198BD3550079DCF2 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		84C45BFD198BD3550079DCF2 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		84C45BFF198BD9260079DCF2 /* NewsInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsInfoViewController.h; sourceTree = "<group>"; };
+		84C45C00198BD9260079DCF2 /* NewsInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,10 @@
 				1F83FA67195EF77900FD485A /* ViewController.m */,
 				1F83FA69195EF77900FD485A /* Images.xcassets */,
 				1F83FA58195EF77900FD485A /* Supporting Files */,
+				84C45BFC198BD3550079DCF2 /* Parser.h */,
+				84C45BFD198BD3550079DCF2 /* Parser.m */,
+				84C45BFF198BD9260079DCF2 /* NewsInfoViewController.h */,
+				84C45C00198BD9260079DCF2 /* NewsInfoViewController.m */,
 			);
 			path = t1;
 			sourceTree = "<group>";
@@ -249,8 +259,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C45BFE198BD3550079DCF2 /* Parser.m in Sources */,
 				1F83FA68195EF77900FD485A /* ViewController.m in Sources */,
 				1F83FA62195EF77900FD485A /* AppDelegate.m in Sources */,
+				84C45C01198BD9260079DCF2 /* NewsInfoViewController.m in Sources */,
 				1F83FA5E195EF77900FD485A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
