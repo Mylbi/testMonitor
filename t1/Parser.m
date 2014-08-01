@@ -16,7 +16,7 @@
 {
     
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    NSURL *url=[NSURL URLWithString:@"http://news.yandex.ru/world.rss"];
+    NSURL *url=[NSURL URLWithString:rssUrl];
     NSURLRequest *theRequest=[NSURLRequest requestWithURL:url
                                               cachePolicy:NSURLRequestUseProtocolCachePolicy
                                           timeoutInterval:60.0];

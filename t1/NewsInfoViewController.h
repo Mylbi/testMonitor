@@ -12,8 +12,11 @@
 @interface NewsInfoViewController : UIViewController <NewsParserDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableDictionary *wordCountDict;
+    NSString *urlString;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+
+-(void)setUrl:(NSString*)url;
 
 @end

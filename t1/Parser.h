@@ -24,7 +24,6 @@
     NSMutableString *pict;
 
     NSMutableDictionary *wordCountDict;
-    //id <NewsParserDelegate> delegate;
 }
 
 @property (nonatomic, assign)id <NewsParserDelegate> delegate;

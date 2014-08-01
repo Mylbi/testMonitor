@@ -23,6 +23,7 @@
 		1F83FA7D195EF77900FD485A /* t1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F83FA7C195EF77900FD485A /* t1Tests.m */; };
 		84C45BFE198BD3550079DCF2 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C45BFD198BD3550079DCF2 /* Parser.m */; };
 		84C45C01198BD9260079DCF2 /* NewsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C45C00198BD9260079DCF2 /* NewsInfoViewController.m */; };
+		84C45C04198BDD890079DCF2 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C45C03198BDD890079DCF2 /* CategoriesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		84C45BFD198BD3550079DCF2 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
 		84C45BFF198BD9260079DCF2 /* NewsInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsInfoViewController.h; sourceTree = "<group>"; };
 		84C45C00198BD9260079DCF2 /* NewsInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsInfoViewController.m; sourceTree = "<group>"; };
+		84C45C02198BDD890079DCF2 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		84C45C03198BDD890079DCF2 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				84C45BFD198BD3550079DCF2 /* Parser.m */,
 				84C45BFF198BD9260079DCF2 /* NewsInfoViewController.h */,
 				84C45C00198BD9260079DCF2 /* NewsInfoViewController.m */,
+				84C45C02198BDD890079DCF2 /* CategoriesViewController.h */,
+				84C45C03198BDD890079DCF2 /* CategoriesViewController.m */,
 			);
 			path = t1;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				1F83FA68195EF77900FD485A /* ViewController.m in Sources */,
 				1F83FA62195EF77900FD485A /* AppDelegate.m in Sources */,
 				84C45C01198BD9260079DCF2 /* NewsInfoViewController.m in Sources */,
+				84C45C04198BDD890079DCF2 /* CategoriesViewController.m in Sources */,
 				1F83FA5E195EF77900FD485A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

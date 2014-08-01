@@ -14,13 +14,10 @@
 
 @implementation NewsInfoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+-(void)setUrl:(NSString*)url
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    urlString = url;
 }
 
 - (void)viewDidLoad
@@ -34,9 +31,11 @@
     
     Parser *parser = [[Parser alloc]init];
     parser.delegate = self;
-    [parser parseUrl:@""];
+    [parser parseUrl:urlString];
     
 }
+
+#pragma mark - Parser Delegate Methods
 
 - (void)parseEndWithDictonary:(NSMutableDictionary *)dict
 {
@@ -44,13 +43,7 @@
     [self.tableView reloadData];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Tbale view methods
+#pragma mark - Tabale view methods
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -89,5 +82,11 @@
     
 }
 
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

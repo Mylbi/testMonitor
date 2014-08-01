@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="-567" y="905"/>
         </scene>
-        <!--View Controller-->
+        <!--Categories View Controller-->
         <scene sceneID="fbh-HU-pXm">
             <objects>
-                <viewController id="bYC-4w-4Js" sceneMemberID="viewController">
+                <viewController id="bYC-4w-4Js" customClass="CategoriesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HkS-Rb-bfq"/>
                         <viewControllerLayoutGuide type="bottom" id="BVO-9c-f4F"/>
@@ -37,7 +37,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                 <state key="normal" title="Все"/>
                                 <connections>
-                                    <segue destination="nvT-fa-8LJ" kind="push" id="pAI-lg-iXb"/>
+                                    <segue destination="nvT-fa-8LJ" kind="push" identifier="All" id="pAI-lg-iXb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oaf-bd-Y9u">
@@ -45,24 +45,36 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                 <state key="normal" title="Политика"/>
+                                <connections>
+                                    <segue destination="nvT-fa-8LJ" kind="push" identifier="Politic" id="jcT-Dy-AJB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roe-Im-CTE">
                                 <rect key="frame" x="84" y="239" width="98" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                 <state key="normal" title="Общество"/>
+                                <connections>
+                                    <segue destination="nvT-fa-8LJ" kind="push" identifier="Social" id="GFy-aU-iUX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8J-4l-K6W">
                                 <rect key="frame" x="84" y="284" width="107" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                 <state key="normal" title="Экономика"/>
+                                <connections>
+                                    <segue destination="nvT-fa-8LJ" kind="push" identifier="Business" id="x17-si-Yg9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQk-qK-4LY">
                                 <rect key="frame" x="84" y="329" width="142" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                 <state key="normal" title="Происшествия"/>
+                                <connections>
+                                    <segue destination="nvT-fa-8LJ" kind="push" identifier="Incident" id="HLE-Ox-k3E"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -135,4 +147,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="jcT-Dy-AJB"/>
+    </inferredMetricsTieBreakers>
 </document>
