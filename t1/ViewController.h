@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <NSXMLParserDelegate>
+@interface ViewController : UIViewController <NSXMLParserDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     NSMutableData *rssData;
     NSMutableArray *news;
@@ -21,8 +21,7 @@
     NSString *corrURl;
     NSArray *array4news;
     
-    NSMutableArray *fArr;
-    
+    NSMutableDictionary *wordCountDict;
 }
 
 @property (nonatomic, retain) NSMutableData *rssData;
@@ -36,6 +35,7 @@
 @property (nonatomic, retain) UIImageView *imm;
 @property (nonatomic, retain) NSString *corrURl;
 
-@property (nonatomic, retain) NSArray *array4news;
-@property (nonatomic, retain) NSMutableArray *fArr;
+
+@property (nonatomic, retain) IBOutlet UITableView *mainTableView;
+
 @end

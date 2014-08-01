@@ -24,9 +24,7 @@
 @synthesize pict;
 @synthesize imm;
 @synthesize corrURl;
-@synthesize array4news;
 
-@synthesize fArr;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
@@ -51,7 +49,8 @@
     //[theConnection release];
     
     
-    
+    self.mainTableView.delegate = self;
+    self.mainTableView.dataSource = self;
     
     
 }
@@ -114,7 +113,7 @@ didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qu
                                  pubDate, @"pubDate",
                                  about, @"description",
                                  pict, @"image",nil];
-        self.array4news = [NSMutableArray array];
+        array4news = [NSMutableArray array];
         
         //      NSString *secondString  = [[NSString alloc] initWithData:[newsItem objectForKey:@"description"] encoding:NSUTF8StringEncoding];
         //  NSData *d = [[NSData alloc] initWithData:[newsItem objectForKey:@"description" ]];
@@ -247,7 +246,7 @@ didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qu
     
     /*** count ***/
     
-    NSMutableDictionary *wordCountDict =  [[NSMutableDictionary alloc]init];
+    wordCountDict =  [[NSMutableDictionary alloc]init];
     for (NSString *word in wordsArray)//fArr)
     {
         if ([wordCountDict objectForKey:word] == nil)
@@ -268,7 +267,7 @@ didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qu
              посмотреть как должно изменяться l относительно k и что вообще за хрень
              кодировка (лайфхак: NSLog(@"%@", [array4words objectAtIndex:l]); )
              ********************/
-    
+    [self.mainTableView reloadData];
 }
 
 
@@ -280,87 +279,33 @@ didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qu
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [news count];
+    return [wordCountDict count];
     
 }
-
-
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
 
-/*
+
  -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
  {
  static NSString *CellIdentifier = @"Cell";
  
  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
- if (cell == nil) {
- cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
- reuseIdentifier:CellIdentifier] ; //]autorelease];
- //   ImagesForTables *immag1=[[[ImagesForTables alloc]init] autorelease];
- //   LabelsForTables *lab1=[[[LabelsForTables alloc] initWithFrame:CGRectMake(60, 2, 350, 15)] autorelease];
- //   LabelsForTables *lab2=[[[LabelsForTables alloc] initWithFrame:CGRectMake(60, 20 , 350, 15)] autorelease];
  
- //   lab1.tag=12;
- //  lab2.tag=13;
- 
- // [immag loadImageFromURL];
- 
- //immag.imageView=imm;
- 
- // immag1.tag=10;
- 
- //NSData *dat=[NSData dataWithContentsOfURL:url];
- //imm=[UIImage imageWithData:dat];
- //cell.imageView.image=imm;
- 
- //  [cell.contentView addSubview:immag1];
- //  [cell.contentView addSubview:lab1];
- //  [cell.contentView addSubview:lab2];
- }
- 
- NSDictionary *newsItem = [news objectAtIndex:indexPath.row];
- 
- // cell.textLabel.text = [newsItem objectForKey:@"title"];
- 
- // cell.detailTextLabel.text = [newsItem objectForKey:@"pubDate"];
- 
- //  LabelsForTables *lab=(LabelsForTables *)[cell.contentView viewWithTag:12];
- //  lab.text=[newsItem objectForKey:@"title"];
- 
- //  [cell.contentView bringSubviewToFront:lab];
+     if (cell == nil)
+         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
  
  
- //  LabelsForTables *labe=(LabelsForTables *)[cell.contentView viewWithTag:13];
- //  labe.text=[newsItem objectForKey:@"pubDate"];
+     NSString *key = [[wordCountDict allKeys]objectAtIndex:indexPath.row];
+     
+     cell.textLabel.text = [NSString stringWithFormat:@"%@ :%i",
+                                                        key,
+                                                        [[wordCountDict objectForKey:key] integerValue]];
  
- 
- //  [cell.contentView bringSubviewToFront:labe];
- 
- //NSLog(@"%@", lab.text);
- 
- 
- NSString *str=[[news objectAtIndex:indexPath.row ] objectForKey:@"image"];//NSLog(@"%@", str);
- 
- 
- NSString *imagelink=[NSString stringWithFormat:@"%@%@",@"http://www.imaladec.net", str];
- 
- NSString *corrURl1 = [imagelink stringByReplacingOccurrencesOfString:@"\n\t\t    " withString:@""];
- 
- 
- 
- NSURL *url=[NSURL URLWithString:corrURl1];
- //  ImagesForTables *immag= (ImagesForTables *)[cell.contentView viewWithTag:10];
- //  if (immag.imageView && immag.imageView.image) immag.imageView.image=nil;
- 
- 
- //  [immag loadImageFromURL:url];
- //  [cell.contentView bringSubviewToFront:immag];
- 
- return cell;
+     return cell;
  
  }
  
@@ -374,8 +319,7 @@ didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qu
  //  [detailViewController1 release];
  
  }
- 
- */
+
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     NSLog(@"%@", error);
